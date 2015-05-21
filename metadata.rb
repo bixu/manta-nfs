@@ -1,0 +1,10 @@
+name             'manta-nfs'
+maintainer       'Yetu'
+maintainer_email 'dev@yetu.com'
+license          'MIT'
+description      'Installs/Configures manta-nfs'
+long_description 'Installs/Configures manta-nfs'
+version          '0.1.0'
+
+depends 'nodejs'
+depends 'build-essential'

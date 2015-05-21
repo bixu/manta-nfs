@@ -1,0 +1,24 @@
+---
+driver_plugin: joyent
+driver_config:
+  joyent_username: <%= ENV['MANTA_USER'] %>
+  joyent_keyfile: "<%= ENV['HOME'] %>/.ssh/id_rsa"
+  joyent_keyname: <%= ENV['MANTA_KEY_ID'] %>
+  joyent_url: <%= ENV['JOYENT_API_URL'] %>
+  joyent_version: '~7.0'
+  joyent_flavor_id: g3-highcpu-1.75-kvm
+
+platforms:
+- name: lx-ubuntu-14.04_20150415
+  provisioner:
+    name: chef_zero
+    sudo: true
+    require_chef_omnibus: '11.16.4'
+  driver_config:
+    joyent_image_id: 430da066-e3a7-11e4-9657-332a2dbdf565
+    username: root
+
+suites:
+  - name: Manta-NFS
+    run_list:
+      - recipe[manta-nfs::default]
