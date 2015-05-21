@@ -19,8 +19,8 @@ template '/etc/manta-nfs.json' do
 	source 'mantanfs.json.erb'
 end
 
-remote_directory '/root/.ssh/manta-nfs-keys' do
-	source 	'manta-nfs-keys'
+remote_directory '/root/.ssh/temp-manta-nfs-keys' do
+	source 	'temp-manta-nfs-keys'
 	files_mode	'0600'
 end
 
